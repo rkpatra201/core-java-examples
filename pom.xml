@@ -12,7 +12,7 @@
         <module>java-threading</module>
         <module>java-collections</module>
         <module>java-ds</module>
+        <module>java-oops</module>
+        <module>java-design-patterns</module>
     </modules>
-
-
 </project>
