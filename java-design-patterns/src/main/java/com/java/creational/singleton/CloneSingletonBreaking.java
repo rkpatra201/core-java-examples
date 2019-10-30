@@ -1,14 +1,14 @@
 package com.java.creational.singleton;
 
-public class CloneSingleton extends ParentSingleton{
-    private static final CloneSingleton INSTANCE = new CloneSingleton();
+public class CloneSingletonBreaking extends ParentSingleton{
+    private static final CloneSingletonBreaking INSTANCE = new CloneSingletonBreaking();
 
-    private CloneSingleton()
+    private CloneSingletonBreaking()
     {
 
     }
 
-    public static CloneSingleton getINSTANCE() {
+    public static CloneSingletonBreaking getINSTANCE() {
         return INSTANCE;
     }
     // mandatory to override the clone. else it will go to super.clone() and generate

@@ -1,10 +1,10 @@
 package com.java.creational.singleton;
 
-public class CloneSingletonMain {
+public class CloneSingletonBreakingMain {
     public static void main(String[] args) throws CloneNotSupportedException{
-        CloneSingleton cloneSingleton = CloneSingleton.getINSTANCE();
-        System.out.println(cloneSingleton.hashCode());
-        Object duplicateSingleton = cloneSingleton.clone();
+        CloneSingletonBreaking cloneSingletonBreaking = CloneSingletonBreaking.getINSTANCE();
+        System.out.println(cloneSingletonBreaking.hashCode());
+        Object duplicateSingleton = cloneSingletonBreaking.clone();
         System.out.println(duplicateSingleton.hashCode());
     }
 }
