@@ -1,4 +1,4 @@
-package com.java.streams.generate;
+package com.java.streams;
 
 import java.util.ArrayList;
 import java.util.Arrays;
