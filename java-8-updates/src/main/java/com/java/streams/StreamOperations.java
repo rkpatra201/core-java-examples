@@ -14,6 +14,11 @@ public class StreamOperations {
         courseList.add("PHARMACY");
     }
 
+    public static void m7()
+    {
+        courseList.parallelStream().forEach(System.out::println);
+    }
+
     public static void m6()
     {
        Optional<String> reduced = courseList.stream().reduce((s1, s2)->s1+"%%%%"+s2);
@@ -85,6 +90,7 @@ public class StreamOperations {
        // m3();
       //  m4();
        // m5();
-        m6();
+      //  m6();
+        m7();
     }
 }
