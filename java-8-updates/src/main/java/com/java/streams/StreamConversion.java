@@ -10,11 +10,14 @@ public class StreamConversion {
     }
 
     public static void streamToList() {
+        // stream to list
         Stream<Integer> intStream = Stream.of(1, 2, 4, 5);
         List<Integer> list = intStream.filter(i -> i % 2 == 0).collect(Collectors.toList());
         System.out.println(list.getClass());
         list.forEach(System.out::println);
         System.out.println("------------");
+
+        // stream to array
         intStream = Stream.of(1, 2, 4, 5);
         Integer[] intEventNums = intStream.filter(i -> i % 2 == 0).toArray(Integer[]::new);
         Stream.of(intEventNums).forEach(System.out::println);
