@@ -1,8 +1,6 @@
 package com.java.streams;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class StreamOperations {
     private static List<String> courseList = new ArrayList<String>();
@@ -14,8 +12,22 @@ public class StreamOperations {
         courseList.add("PHARMACY");
     }
 
+    public static void m8()
+    {
+        // for each
+        courseList.stream().forEach(System.out::println);
+        System.out.println("--------");
+        // sorted
+        courseList.stream().sorted(Comparator.reverseOrder()).forEach(System.out::println);
+    }
+    public static void m9()
+    {
+        // for each ordered for parrallel stream
+        courseList.parallelStream().forEachOrdered(System.out::println);
+    }
     public static void m7()
     {
+        // parallelstream never gurantes order output with forEach
         courseList.parallelStream().forEach(System.out::println);
     }
 
@@ -23,6 +35,17 @@ public class StreamOperations {
     {
        Optional<String> reduced = courseList.stream().reduce((s1, s2)->s1+"%%%%"+s2);
        reduced.ifPresent(System.out::println);
+
+    }
+
+    public static void m55()
+    {
+        // min and max with comparator
+        String result = courseList.stream().min(String::compareTo).get();
+        System.out.println("minValue: "+result);
+
+        result = courseList.stream().max(String::compareTo).get();
+        System.out.println("maxValue: "+result);
 
     }
     public static void m5()
@@ -91,6 +114,9 @@ public class StreamOperations {
       //  m4();
        // m5();
       //  m6();
-        m7();
+      //  m7();
+      //  m8();
+       // m9();
+
     }
 }
