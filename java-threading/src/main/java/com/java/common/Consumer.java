@@ -1,7 +1,6 @@
 package com.java.common;
 
 import java.util.List;
-import java.util.UUID;
 
 public class Consumer implements Runnable {
     private List<String> dataList;
