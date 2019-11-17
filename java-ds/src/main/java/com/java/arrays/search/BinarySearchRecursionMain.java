@@ -14,8 +14,10 @@ public class BinarySearchRecursionMain {
             int mv = arr[m];
             if (sv < mv) {
                 h = m;
+                h--;
             } else if (sv > mv) {
                 l = m;
+                l++;
             } else {
                 System.out.println("found at index " + m);
                 return;
@@ -25,6 +27,7 @@ public class BinarySearchRecursionMain {
         else
         {
             System.out.println("not found");
+            return;
         }
     }
 }
