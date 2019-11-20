@@ -32,7 +32,7 @@ public class QuickSortMain {
         // swap a[i] and a[l] : a[l] is pivot
         // return i;
         int i = l;
-        int pivot = arr[l];// (arr[l]+arr[h]) /2;
+        int pivot = (arr[l]+arr[h]) /2;
         for (int j = l + 1; j <= h; j++) {
             if (arr[j] < pivot) {
                 i++;
