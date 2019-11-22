@@ -1,4 +1,4 @@
-package com.java.string;
+package com.java.main;
 
 public class RecursiveMultiplication {
     public static void main(String[] args) {

@@ -2,7 +2,7 @@ package com.java.arrays.sort;
 
 import java.util.Arrays;
 
-public class QuickSortMain {
+public class QuickSortLomutoMain {
     public static void main(String[] args) {
         int arr[] = {10, 40, 2, 9, 24, 43, 6, 77, 8, 81, 24};
         arr = new int[]{10, 40, 2, 9, 24};

@@ -12,10 +12,10 @@ public class BinarySearchMain {
             int mv = arr[m];
             if (sv < mv) {
                 h = m;
-                h--;
+                h--; // decrease high
             } else if (sv > mv) {
                 l = m;
-                l++;
+                l++; // increase low
             } else {
                 flag=true;
                 System.out.println("found at index " + m);
