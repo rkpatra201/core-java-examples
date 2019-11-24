@@ -32,7 +32,7 @@ public class SegregateEvenAndOddMain {
 
         int i = -1;
         for (int j = 0; j < arr.length; j++) {
-            if (arr[j] % 2 == 0) {
+            if (arr[j] % 2 == 1) {
                 i++;
                 int t = arr[i];
                 arr[i] = arr[j];
