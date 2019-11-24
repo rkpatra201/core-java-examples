@@ -33,7 +33,7 @@ public class StreamOperations {
 
     public static void m6()
     {
-       Optional<String> reduced = courseList.stream().reduce((s1, s2)->s1+"%%%%"+s2);
+       Optional<String> reduced = courseList.stream().reduce((s1, s2)->s1+","+s2);
        reduced.ifPresent(System.out::println);
 
     }
@@ -118,5 +118,6 @@ public class StreamOperations {
       //  m8();
        // m9();
 
+        m6();
     }
 }
