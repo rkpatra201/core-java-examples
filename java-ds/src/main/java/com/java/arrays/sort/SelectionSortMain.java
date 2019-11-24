@@ -6,6 +6,8 @@ public class SelectionSortMain {
     public static void main(String[] args) {
         int arr[] = {2, 3, 4, 1};
 
+        // compare first element with further next elements.
+        // if first element is smaller than next element then swap
         for(int i=0;i < arr.length;i++)
         {
             for(int j=i+1;j<arr.length;j++)
