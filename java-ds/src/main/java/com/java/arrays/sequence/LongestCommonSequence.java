@@ -1,4 +1,4 @@
-package com.java.arrays.common;
+package com.java.arrays.sequence;
 
 public class LongestCommonSequence {
 }

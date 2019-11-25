@@ -17,6 +17,7 @@ public class QuickSortLomutoMain {
             // get partitionPivotLast index as i.
             // recursively divide arr between l and i-1
             // recursively divide arr between i+1 and h
+
            //    int j = partitionPivotLast(arr, l, h);
             int j = partitionPivotFirst(arr, l, h);
             quickSort(arr, l, j - 1);
@@ -32,7 +33,7 @@ public class QuickSortLomutoMain {
         // swap a[i] and a[l] : a[l] is pivot
         // return i;
         int i = l;
-        int pivot = (arr[l]+arr[h]) /2;
+        int pivot = arr[l];
         for (int j = l + 1; j <= h; j++) {
             if (arr[j] < pivot) {
                 i++;

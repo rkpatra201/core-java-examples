@@ -12,6 +12,8 @@ import java.util.concurrent.TimeUnit;
 public class ExecutorServiceMain {
 
     public static final Set<Integer> cacheSize = new HashSet<>();
+
+    private static final Set<Thread> threads = new HashSet<>();
     public static void main(String[] args) {
        // cachedThreadPool();
         scheduledThreadPool();
@@ -20,13 +22,13 @@ public class ExecutorServiceMain {
     public static void scheduledThreadPool()
     {
         ExecutorService executorService = Executors.newScheduledThreadPool(2);
-        Runnable runnable = new RunnableExecutor();
+        Runnable runnable = new RunnableExecutor(threads);
         int i =0;
         while(i< 10) {
             ((ScheduledExecutorService) executorService).schedule(runnable,2, TimeUnit.SECONDS);
             i++;
         }
-        executorService.shutdown();
+        /*executorService.shutdown();
         try {
             executorService.awaitTermination(1, TimeUnit.HOURS);
         } catch (InterruptedException e) {
@@ -34,12 +36,26 @@ public class ExecutorServiceMain {
         }
 
         System.out.println(cacheSize.size());
+        */
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("printing thread details");
+
+               for(Thread thread: threads)
+               {
+                   System.out.println(thread+" "+thread.getState());
+               }
+
     }
     // create new thread if needed also uses free threads. kiils thread if they are idle for 60s
     public static void cachedThreadPool()
     {
         ExecutorService executorService = Executors.newCachedThreadPool();
-        Runnable runnable = new RunnableExecutor();
+        Runnable runnable = new RunnableExecutor(threads);
         int i =0;
         while(i< 100) {
             executorService.submit(runnable);
