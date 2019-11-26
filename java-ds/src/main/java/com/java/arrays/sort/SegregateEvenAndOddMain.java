@@ -1,4 +1,4 @@
-package com.java.arrays.common;
+package com.java.arrays.sort;
 
 import java.util.Arrays;
 import java.util.Collections;
