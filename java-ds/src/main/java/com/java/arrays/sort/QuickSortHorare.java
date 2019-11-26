@@ -14,6 +14,13 @@ public class QuickSortHorare {
     private static void quickSort(int arr[], int l, int h) {
         if (l < h) {
             int p = partition(arr, l, h);
+//            nth highest
+//           int secondHighestIndex = arr.length-1-2;
+//            if(p==secondHighestIndex)
+//            {
+//                System.out.println(arr[p]);
+//                System.exit(0);
+//            }
             quickSort(arr, l, p);
             quickSort(arr, p + 1, h);
         }
@@ -22,7 +29,7 @@ public class QuickSortHorare {
     private static int partition(int arr[], int l, int h) {
         int i = l - 1; // below lower bound
         int j = h + 1; // above higher bound
-        int pivot = arr[l];
+        int pivot = arr[h];
         while (true) {
             do {
                 i++;
@@ -30,13 +37,13 @@ public class QuickSortHorare {
             do {
                 j--;
             } while (arr[j] > pivot); // ascending or descending
-
             if (i >= j) {
                 return j;
             }
             int t = arr[i];
             arr[i] = arr[j];
             arr[j] = t;
+
         }
     }
 }

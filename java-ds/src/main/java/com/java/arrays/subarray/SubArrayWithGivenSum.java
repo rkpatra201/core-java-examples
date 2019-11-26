@@ -6,6 +6,7 @@ import java.util.Map;
 public class SubArrayWithGivenSum {
     public static void main(String[] args) {
         int arr[] = {10, 2, -2, -20, 10};
+        // map that contains currentSum and index
         Map<Integer, Integer> map = new HashMap<>();
         int targetSum = -22;
 

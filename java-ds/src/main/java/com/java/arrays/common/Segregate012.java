@@ -1,4 +1,4 @@
-package com.java.main;
+package com.java.arrays.common;
 
 public class Segregate012 {
     public static void main(String[] args) {
