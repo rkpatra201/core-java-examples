@@ -18,9 +18,11 @@ public class MergeSortMain {
         int[] l = new int[mid];
         int[] r = new int[n - mid];
 
+        // create left array
         for (int i = 0; i < mid; i++) {
             l[i] = a[i];
         }
+        // create right array
         for (int i = mid; i < n; i++) {
             r[i - mid] = a[i];
         }

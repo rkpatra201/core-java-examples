@@ -29,7 +29,7 @@ public class QuickSortHorare {
     private static int partition(int arr[], int l, int h) {
         int i = l - 1; // below lower bound
         int j = h + 1; // above higher bound
-        int pivot = arr[h];
+        int pivot = arr[l];
         while (true) {
             do {
                 i++;
@@ -43,7 +43,6 @@ public class QuickSortHorare {
             int t = arr[i];
             arr[i] = arr[j];
             arr[j] = t;
-
         }
     }
 }
