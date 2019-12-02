@@ -1,4 +1,4 @@
-package com.java.arrays.common;
+package com.java.arrays.rec.dp;
 
 import java.util.Arrays;
 

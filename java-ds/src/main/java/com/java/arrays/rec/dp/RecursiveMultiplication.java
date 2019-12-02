@@ -1,4 +1,4 @@
-package com.java.arrays.common;
+package com.java.arrays.rec.dp;
 
 public class RecursiveMultiplication {
     public static void main(String[] args) {

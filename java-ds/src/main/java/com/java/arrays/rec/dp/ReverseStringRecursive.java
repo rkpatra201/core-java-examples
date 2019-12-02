@@ -1,4 +1,4 @@
-package com.java.string;
+package com.java.arrays.rec.dp;
 
 public class ReverseStringRecursive {
     public static void main(String[] args) {
