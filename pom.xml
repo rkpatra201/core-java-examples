@@ -15,5 +15,6 @@
         <module>java-ds</module>
         <module>java-oops</module>
         <module>java-design-patterns</module>
+        <module>java-junit4</module>
     </modules>
 </project>
