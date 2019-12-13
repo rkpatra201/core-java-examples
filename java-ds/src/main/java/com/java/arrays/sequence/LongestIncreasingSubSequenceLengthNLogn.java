@@ -5,20 +5,22 @@ import java.util.Arrays;
 class LongestIncreasingSubSequenceLengthNLogn {
     // Binary search (note boundaries in the caller)
     // A[] is ceilIndex in the caller
-    static int CeilIndex(int A[], int l, int r, int key) {
-        while (r - l > 1) {
-            int m = l + (r - l) / 2;
+    static int findWhereElementCanFit_BinarySearch(int A[], int l, int r, int key) {
+        while (l<r) {
+            int m = (l + r )/ 2;
             if (key <= A[m]) {
                 r = m;
+                r--;
             } else {
                 l = m;
+                l++;
             }
         }
-
+        System.out.print(r);
         return r;
     }
 
-    static int LongestIncreasingSubsequenceLength(int A[], int size) {
+    static int LongestIncreasingSubSequenceLength(int A[], int size) {
         // Add boundary case, when array size is one
 
         int[] tailTable = new int[size];
@@ -32,16 +34,17 @@ class LongestIncreasingSubSequenceLengthNLogn {
                 tailTable[0] = A[i];
 
             else if (A[i] > tailTable[len - 1])
-                // A[i] wants to extend largest subsequence
+                // increase length of tail table and put a[i]
                 tailTable[len++] = A[i];
 
             else {
                 // A[i] wants to be current end candidate of an existing
                 // subsequence. It will replace ceil value in tailTable
-                int replaceIndex = CeilIndex(tailTable, -1, len - 1, A[i]);
+                int replaceIndex = findWhereElementCanFit_BinarySearch(tailTable, 0, len - 1, A[i]);
                 tailTable[replaceIndex] = A[i];
             }
         }
+        System.out.println(Arrays.toString(tailTable));
         return len;
     }
 
@@ -52,7 +55,7 @@ class LongestIncreasingSubSequenceLengthNLogn {
         // {2, 5, 3, 7, 11, 8, 0, 10, 13, 6}; lis length = 6
         int A[] = {0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15};
         int n = A.length;
-        System.out.println("Length of Longest Increasing Subsequence is " + LongestIncreasingSubsequenceLength(A, n));
+        System.out.println("Length of Longest Increasing Subsequence is " + LongestIncreasingSubSequenceLength(A, n));
     }
 }
 
