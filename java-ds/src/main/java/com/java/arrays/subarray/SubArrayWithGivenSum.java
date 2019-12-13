@@ -17,14 +17,15 @@ public class SubArrayWithGivenSum {
             // evaluate sum of each element
             currentSum = currentSum + arr[i];
             // check if currentSum - targetSum=0; start=0;end=i
-            if (currentSum - targetSum == 0) {
+            int difference = currentSum - targetSum;
+            if (difference == 0) {
                 start = 0;
                 end = i;
                 break;
             }
 
-            if (map.containsKey(currentSum - targetSum)) {
-                start = map.get(currentSum - targetSum) + 1;
+            if (map.containsKey(difference)) {
+                start = map.get(difference) + 1;
                 end = i;
                 break;
             }

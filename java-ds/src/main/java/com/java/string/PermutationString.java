@@ -7,7 +7,7 @@ public class PermutationString {
 
     public static void permute(String first, String second) {
         // logic is here
-        System.out.println(first+"::"+second);
+       // System.out.println(first + "::" + second);
         if (second.length() == 0) {
             System.out.println(first);
             return;
@@ -15,7 +15,9 @@ public class PermutationString {
         for (int i = 0; i < second.length(); i++) {
             String n_first = first + second.charAt(i);
             String n_second = second.substring(0, i) + second.substring(i + 1);
-            permute(n_first, n_second);
+            //permute(n_first, n_second);
+            permute(first + second.charAt(i),
+                    second.substring(0, i) + second.substring(i + 1, second.length()));
         }
     }
 }

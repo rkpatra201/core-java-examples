@@ -5,12 +5,12 @@ public class SubArrayWithMaxSum {
     // kadane's algorithm
     // https://javaconceptoftheday.com/contiguous-subarray-with-maximum-sum-in-java/
     public static void main(String[] args) {
-        int arr[] = {2, -3, 7, -4, 2, 5, -8, -9, 7, 6, -1};
+        int arr[] = {2, -3, 7, -4, 2, 5, -8, -9, 7, -6, -1};
 
         int maxSum = arr[0];
         int start = 0;
         int end = 0;
-        int currentSum = 0;
+        int currentSum = arr[0];
         int currentStart = 0;
         for (int i = 1; i < arr.length; i++) {
             currentSum = currentSum + arr[i];
@@ -25,7 +25,18 @@ public class SubArrayWithMaxSum {
         }
         System.out.println("sum: " + maxSum);
         for (int i = start; i <= end; i++) {
-            System.out.println(arr[i]);
+            System.out.print(arr[i] + " \t");
         }
+        System.out.println("\n");
+
+        // alternate approach below
+        currentSum = arr[0];
+        maxSum = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            currentSum = currentSum + arr[i];
+            currentSum = Math.max(currentSum, arr[i]);
+            maxSum = Math.max(currentSum, maxSum);
+        }
+        System.out.println("sum=" + maxSum);
     }
 }

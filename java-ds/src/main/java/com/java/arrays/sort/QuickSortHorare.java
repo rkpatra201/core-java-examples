@@ -29,7 +29,7 @@ public class QuickSortHorare {
     private static int partition(int arr[], int l, int h) {
         int i = l - 1; // below lower bound
         int j = h + 1; // above higher bound
-        int pivot = arr[l];
+        int pivot = arr[l]; // pivot first element
         while (true) {
             do {
                 i++;
