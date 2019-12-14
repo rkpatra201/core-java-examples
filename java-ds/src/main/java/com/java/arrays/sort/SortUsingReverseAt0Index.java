@@ -5,20 +5,18 @@ import java.util.Arrays;
 public class SortUsingReverseAt0Index {
 
     public static void main(String[] args) {
-
         int arr[] = {1, 5, 6, 7, 3, 4};
-
-        int tempCount = arr.length - 1;
-        while(tempCount  > 0) {
-            int maxIndex = findIndexOfMax(arr, 0, tempCount);
-            reverse(arr, 0, maxIndex);
-            reverse(arr, 0, tempCount);
-            tempCount--;
+        int unsortedArrayLength = arr.length - 1;
+        while(unsortedArrayLength  > 0) {
+            int indexOfMaxValue = findIndexOfMaxValue(arr, 0, unsortedArrayLength);
+            reverse(arr, 0, indexOfMaxValue);
+            reverse(arr, 0, unsortedArrayLength);
+            unsortedArrayLength--;
         }
         System.out.println(Arrays.toString(arr));
     }
 
-    public static int findIndexOfMax(int arr[], int i, int j) {
+    public static int findIndexOfMaxValue(int arr[], int i, int j) {
         int max = arr[i];
         int maxIndex = i;
         for (i = 1; i <= j; i++) {
@@ -35,7 +33,7 @@ public class SortUsingReverseAt0Index {
             int t = arr[i];
             arr[i] = arr[j];
             arr[j] = t;
-            //reverse(arr, ++i, --j);
+            reverse(arr, ++i, --j);
         }
     }
 }
