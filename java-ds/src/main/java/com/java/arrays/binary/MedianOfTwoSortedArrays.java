@@ -1,10 +1,13 @@
-package com.java.arrays.common;
+package com.java.arrays.binary;
 
 public class MedianOfTwoSortedArrays {
     public static void main(String[] args) {
         int arr1[] = {1, 4, 5, 7, 8, 9};
         int arr2[] = {2, 5, 10, 11, 12, 13, 14};
 
+        // 1, 2, 4, 5, 5, 6, 8, 9, 10, 11, 12, 13, 14 = 8
+        //
+        // 1, 2, 4, 5, 5, 6, 8, 9, 10, 11, 12, 13 = 7.0
         // number of elements in left of X = (start + end ) /2 = k
         // number of elements in left of Y = (x.length+y.length+1)/2 - k
 
