@@ -1,6 +1,7 @@
 package com.java.arrays.binary;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class CountSymmetricBinarySubString {
 
@@ -11,15 +12,37 @@ public class CountSymmetricBinarySubString {
     // total 6+4=10
     public static void main(String[] args) {
         String s = "100111000101000";
-        s = "01";
+      //  s = "01";
         //    s = "11100001";
         // find substrings which are of type 1,0
         // find substrings which are of type 0,1
         int oneZero = countSymmetricSubString2(s, '1');
         int zeroOne = countSymmetricSubString2(s, '0');
         System.out.println(oneZero + zeroOne);
+        countSymetricSubStringWithStack(s,'1');// 1_0
+        countSymetricSubStringWithStack(s,'0');// 0_1
     }
 
+    private static void countSymetricSubStringWithStack(String input, char binary)
+    {
+        Stack<Character> stack = new Stack<>();
+        int count = 0;
+        for(char c : input.toCharArray())
+        {
+            if(c==binary)
+            {
+                stack.push(c);
+            }else if(!stack.isEmpty())
+            {
+               char pop = stack.pop();
+               if(c!=pop)
+               {
+                   count = count+1;
+               }
+            }
+        }
+        System.out.println(count);
+    }
     private static int countSymmetricSubString2(String s, char currentBinaryType) {
         int count = 0;
         int numberOfCurrentBinaryTypeTraversed = 0;
