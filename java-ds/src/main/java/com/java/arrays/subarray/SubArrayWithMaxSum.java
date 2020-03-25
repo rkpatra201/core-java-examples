@@ -5,7 +5,8 @@ public class SubArrayWithMaxSum {
     // kadane's algorithm
     // https://javaconceptoftheday.com/contiguous-subarray-with-maximum-sum-in-java/
     public static void main(String[] args) {
-        int arr[] = {2, -3, 7, -4, 2, 5, -8, -9, 7, -6, -1};
+        // works for both mix array and +ve array, fails for -ve array
+        int arr[] = {4, 2, 3, 1};//{2, -3, 7, -4, 2, 5, -8, -9, 7, -6, -1};
 
         int maxSum = arr[0];
         int start = 0;

@@ -1,5 +1,12 @@
 FreeMarker Template example: ${message}
 
+<#if type == "INT" || type == "STRING">
+<#assign x=type.getValue()>
+<#else>
+<#assign x="none">
+</#if>
+${x}
+
 =======================
 ===  County List   ====
 =======================

@@ -35,7 +35,6 @@ public class StreamOperations {
     {
        Optional<String> reduced = courseList.stream().reduce((s1, s2)->s1+","+s2);
        reduced.ifPresent(System.out::println);
-
     }
 
     public static void m55()

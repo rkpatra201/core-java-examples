@@ -10,9 +10,9 @@ public class SpreedSheetNotations {
         StringBuffer sb = new StringBuffer();
         while(n > 0)
         {
-            int rem = (n-1)%26;
-            sb.append( (char) ((rem)+'A'));
-            n = (n-1)/26;
+            int rem = (n)%26;
+            sb.append( (char) ((rem)+'A'-1));
+            n = (n)/26;
         }
         System.out.println(sb.reverse().toString());
     }
