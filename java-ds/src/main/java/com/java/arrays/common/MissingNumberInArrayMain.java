@@ -11,10 +11,10 @@ public class MissingNumberInArrayMain {
             x1 = x1 ^ arr[i];
         }
         int x2 = 1;
-        for (int i = 2; i < n + 2; i++) { // xor of index from 2 to n+2
+        for (int i = 2; i <= n + 1; i++) { // xor of index from 2 to n+2
             x2 = x2 ^ i;
         }
-        System.out.println(x1+" "+x2);
+        System.out.println(x1 + " " + x2);
         System.out.println(x1 ^ x2);
     }
 }
