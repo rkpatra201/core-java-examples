@@ -34,15 +34,15 @@ public class SllReverse {
     private static Node reverseNode(Node head)
     {
         Node current = head;
-        Node next = null;
+        Node actualNext = null;
         Node prev = null;
         while(current!=null)
         {
             // logic is here
-            next = current.next;
+            actualNext = current.next;
             current.next=prev;
             prev=current;
-            current=next;
+            current=actualNext;
         }
         head=prev;
         return head;
