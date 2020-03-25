@@ -1,4 +1,4 @@
-package com.java.arrays.binary;
+package com.java.arrays.common;
 
 public class MedianOfTwoSortedArrays {
     public static void main(String[] args) {
