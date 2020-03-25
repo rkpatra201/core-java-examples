@@ -16,5 +16,7 @@
         <module>java-oops</module>
         <module>java-design-patterns</module>
         <module>java-junit4</module>
+        <module>java-ftl</module>
+        <module>java-collections</module>
     </modules>
 </project>
