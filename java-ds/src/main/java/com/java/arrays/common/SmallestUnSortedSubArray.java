@@ -3,8 +3,9 @@ package com.java.arrays.common;
 public class SmallestUnSortedSubArray {
     public static void main(String[] args) {
 
-        int arr[] = {1, 2, 4, 5, 3};
+      //  int arr[] = {1, 2, 4, 5, 3};
 //        int arr[] = {10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60};
+        int arr[] = {1,2,3,10,9,78,68,101,90,100,1000};
         printSmallestUnSortedSubArray(arr);
     }
 
