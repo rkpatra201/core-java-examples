@@ -7,12 +7,13 @@ public class RecursiveClimbStairs {
     }
 
     public static int climbStairs(int n) {
-        if (n == 0 ) { // base case
+        if (n == 0) { // base case
             return 1;
-        }
-        else if (n < 0) { // base case
+        } else if (n < 0) { // base case
             return 0;
         }
-        return climbStairs(n - 3) + climbStairs(n - 2) + climbStairs(n - 1);
+        return climbStairs(n - 3)
+                + climbStairs(n - 2)
+                + climbStairs(n - 1);
     }
 }
