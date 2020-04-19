@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class DynamicCoinChangeWithMinimumNumberOfCoins {
     public static void main(String[] args) {
-        int coins[] = {1, 5, 6, 9}; // infinite number of similar coins supplied
-        int sum = 19;
+        int coins[] = {1, 5, 6, 8}; // infinite number of similar coins supplied
+        int sum = 11;
         tabularApproach(coins, sum);
         arrayApproach(coins, sum);
     }
@@ -18,9 +18,9 @@ public class DynamicCoinChangeWithMinimumNumberOfCoins {
         for (int i = 0; i < coinValues.length; i++) {
             for (int j = 1; j <= sum; j++) {
                 if (j >= coinValues[i]) {
-                    int coinAwayValue = table[j - coinValues[i]] + 1;
+                    int coinAwayValue = table[j - coinValues[i]];
                     int currentValue = table[j];
-                    table[j] = Math.min(coinAwayValue, currentValue);
+                    table[j] = Math.min(coinAwayValue + 1, currentValue);
                 }
             }
         }
