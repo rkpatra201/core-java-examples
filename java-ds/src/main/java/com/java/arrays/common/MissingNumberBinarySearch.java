@@ -9,7 +9,6 @@ public class MissingNumberBinarySearch {
 
         int missingValue = binarySearch(left, right, arr);
         System.out.println(missingValue);
-
     }
 
     private static int binarySearch(int left, int right, int[] a) {
