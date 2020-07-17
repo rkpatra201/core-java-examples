@@ -2,7 +2,7 @@ package com.java.streams;
 
 import java.util.*;
 
-public class StreamOperations {
+public class StreamOperationsStr {
     private static List<String> courseList = new ArrayList<String>();
 
     static {
