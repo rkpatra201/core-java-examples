@@ -4,6 +4,7 @@ import com.java.common.Employee;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -32,11 +33,17 @@ public class StreamOperationsEmp {
         //   filterByIdAndSalary();
        // groupBySalary();
       //  toMap();
+        partitionBy();
     }
 
-    private static void partitionBy()
-    {
+    // partition by even and odd empId
+    private static void partitionBy() {
+        Stream<Employee> s = Stream.of(arrayOfEmps);
+        Map<Boolean, List<Employee>> partition = s.collect(Collectors.partitioningBy(e -> {
+            return e.getId() % 2 == 0;
+        }));
 
+        displayStream(partition.entrySet().stream());
     }
     private static void toMap() {
         Stream<Employee> s = Stream.of(arrayOfEmps);
