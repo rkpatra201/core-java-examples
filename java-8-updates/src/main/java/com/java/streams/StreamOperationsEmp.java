@@ -1,10 +1,9 @@
 package com.java.streams;
 
+import com.java.common.Country;
 import com.java.common.Employee;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -33,7 +32,74 @@ public class StreamOperationsEmp {
         //   filterByIdAndSalary();
        // groupBySalary();
       //  toMap();
-        partitionBy();
+     //   partitionBy();
+     //   sortByNameTreeMap();
+        filterByValuesListMap();
+    }
+
+    private static void filterByValuesListMap()
+    {
+        List<Map<String, String>> collData = new ArrayList<>();
+        Map<String, String> stuMap = new HashMap<String, String>();
+        stuMap.put("Sanjeev", "Course_1");
+        stuMap.put("Sanjay", "Course_2");
+        stuMap.put("Sandeep", "Course_1");
+        stuMap.put("Alex", "Course_2");
+        stuMap.put("Dumbo", "Course_1");
+        stuMap.put(null, "College_A");
+        collData.add(stuMap);
+
+        stuMap = new HashMap<String, String>();
+        stuMap.put("Dave", "Course_1");
+        stuMap.put("Alex", "Course_2");
+        stuMap.put("Dumbo", "Course_1");
+        stuMap.put("Rohan", "Course_2");
+        stuMap.put("Rohit", "Course_1");
+        stuMap.put(null, "College_B");
+        collData.add(stuMap);
+
+        // filter where course is Course_1
+        Object response  = collData.stream().map(e->{
+            return e.entrySet().
+                    stream().
+                    filter(e1->{return e1.getValue().equals("Course_1");})
+                    .collect(Collectors.toList());
+        }).collect(Collectors.toList());
+
+        System.out.println(response.getClass());
+        System.out.println(response);
+
+    }
+
+    private static void sortByNameTreeMap()
+    {
+
+        List<Country> countries = new ArrayList();
+        countries.add(new Country("India", "91"));
+        countries.add(new Country("Pak", "92"));
+        countries.add(new Country("America", "94"));
+        countries.add(new Country("America", "95"));
+
+        Function<Country, String> countryStringFunction = (c) -> {
+            return c.getName();
+        };
+        Function<Country, String> codeStringFunction = (c) -> {
+            return c.getCode();
+        };
+
+
+
+        Map<String, String> map = null;
+
+        map = countries.
+                stream()
+                .collect(Collectors.toMap(countryStringFunction,
+                        codeStringFunction,
+                        (u, v) -> {
+                            return v;
+                        }, TreeMap::new));
+
+        System.out.println(map);
     }
 
     // partition by even and odd empId
