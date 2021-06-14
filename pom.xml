@@ -9,14 +9,12 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>java-threading</module>
 		<module>java-apache-kafka</module>
 		<module>java-8-updates</module>
         <module>java-ds</module>
-        <module>java-oops</module>
         <module>java-design-patterns</module>
         <module>java-junit4</module>
         <module>java-ftl</module>
-        <module>java-collections</module>
+        <module>core-java</module>
     </modules>
 </project>
